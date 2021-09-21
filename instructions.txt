@@ -1,0 +1,9 @@
+#### HACKBRIGHT RESOURCES ####
+0921 lab instructions:
+https://fellowship.hackbrightacademy.com/materials/serft8/exercises/js-coffee-app/
+
+0921 afternoon lecture (JavaScript and Event Handling):
+https://fellowship.hackbrightacademy.com/materials/serft8/lectures/js-event-handling/
+
+0921 morning lecture (JavaScript and DOM Manipulation):
+https://fellowship.hackbrightacademy.com/materials/serft8/lectures/js-dom-manipulation/
