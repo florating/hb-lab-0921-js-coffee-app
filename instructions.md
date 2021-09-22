@@ -49,15 +49,15 @@ Add an event handler to the Add to cart button that will allow users to add a pr
 
 [GIF]
 
-EVENT TRIGGER: When a user clicks on the Add to cart button for an item
-RESULT: (1) the item’s name should appear in their cart and
+[EVENT-TRIGGER]: When a user clicks on the Add to cart button for an item
+[RESULT]: (1) the item’s name should appear in their cart and
         (2) the value of the item added to the cart’s total.
 
-EVENT TYPE: 'click'
+[EVENT-TYPE] 'click'
 
 [HINT]
 
-NEXT STEP: how to select the Add to cart button with jQuery
+[NEXT-STEP]: how to select the Add to cart button with jQuery
 
 * from index.html:
     <button class="add-to-order">
@@ -71,7 +71,7 @@ DESIRED CODE for jQuery: $('.add-to-order')
 
 <!-- You can do this one of two ways. Either way, your goal is to write a CSS selector that targets the button. You can dig through the HTML in templates/index.html until you find the button in question or you can use your browser’s dev tools — to do this, right-click on the Add to cart button in your browser and click Inspect Element. Your dev tools should open up and show you the HTML for the element that you clicked on. -->
 
-NEXT STEP: add an event listener onto the button
+[NEXT-STEP]: add an event listener onto the button
             Add this code to static/js/coffeeShop.js.
 
 ### EXAMPLE FROM AFTERNOON LECTURE *1
@@ -94,6 +94,89 @@ NEXT STEP: add an event listener onto the button
 Remember — you can test your code by going to localhost:5000 in your browser. You may need to hard-reload the page to get your browser to pull in the latest copy of your JavaScript.
 
 When you’re finished, check your code against the solution below and move on to the next section!
+
+### EXCERPT FROM LAB 2 ###
+[NEXT-STEP] Place an Order
+
+[EVENT-TRIGGER] user clicks on the Place Order button
+
+[RESULT] amount of coffee ordered should be added to the total amount of coffee sold and the cart should reset.
+
+[GIF]
+
+Before we get to the part where you select the Place Order button with jQuery and add an event listener to it, we need to explain how you can get the number of items in the cart (so you can update the sentence in the site heading that says We've proudly served _ cups of coffee).
+
+One way to go about this is to create a global variable to store the number of items in the cart. Then, you can increment it every time the user adds a cup of coffee to the cart. But there’s an even better way that doesn’t require a global variable at all — you can actually compute this number on the fly as long as you understand how the DOM works! Let’s talk about that.
+
+Here’s the HTML that makes up the user’s cart. We’re interested in the tbody element since that’s where we append tr elements [EVENT-TRIGGER]whenever the user adds another coffee to their cart.
+
+<section id="your-cart">
+  <!-- (...snippet) -->
+
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+      </tr>
+    </thead>
+
+    <tbody id="cart-items"></tbody>
+  </table>
+
+  <!-- (...snippet) -->
+</section>
+
+[RESULT] Here’s how tbody might look after the user has added 2 cups of coffee:
+
+tbody in HTML
+<tbody id="cart-items">
+  <tr>
+    <td>Coffee</td>
+  </tr>
+  <tr>
+    <td>Coffee</td>
+  </tr>
+</tbody>
+
+
+The tr nodes are tbody’s children. Each tr is a row in the table and each row is a cup of coffee. Since the user added 2 cups of coffee to the cart, tbody contains 2 children. If we figure out a way to get the amount of children tbody has, that will give us the number of coffee cups in the user’s cart!
+
+jQuery has a bunch of methods related to traversing the DOM (you can check out the list of methods in this category here: jQuery Documentation - Category: Tree Traversal). One of those methods is jQuery.children — it’ll return an element’s children. FROM DOC:        .children()
+            Get the children of each element in the set of matched elements, optionally filtered by a selector.
+
+
+[NEXT-STEP] In the browser, click on the Add to Order button a couple of times to populate your cart.
+
+[NEXT-STEP] open the web console and call: $('#cart-items').children()
+
+[RESULT] should see a jQuery object that looks like a collection of elements. It has a length! 
+
+[NEXT-STEP] in console call: ('#cart-items').children().length
+    length is a property that counts the num of elements in the jQ object
+
+
+[RESULT] get the number of coffee cups in the user’s cart
+
+[NEXT-STEP]add code to static/js/coffeeShop.js that 
+
+[EVENT-TYPE] updates the total amount of cups sold and resets the cart when 
+
+[EVENT-TRIGGER] a user clicks on the Place Order button. 
+
+
+[HINT] solution below
+    $(‘#place-order’).on(‘click’, () => {
+    // This is the body of your callback function! Add more code here!
+
+    });
+
+
+
+
+
+
+
+
 
 
 
