@@ -1,4 +1,16 @@
-# HACKBRIGHT RESOURCES #
+# README
+This lab exercise was initially assigned on 09/21/21.
+
+##### Outline:
+[Hackbright Resources](#hackbright-resources)
+[Getting elements with jQuery](#getting-elements-with-jquery)
+[Common event types](#common-event-types)
+[Excerpt from Lab](#excerpt-from-lab)
+[Example #1](#example-1:)
+[Example #2](#example-2:)
+
+
+### HACKBRIGHT RESOURCES
 0921 lab instructions:
 https://fellowship.hackbrightacademy.com/materials/serft8/exercises/js-coffee-app/
 
@@ -9,23 +21,23 @@ https://fellowship.hackbrightacademy.com/materials/serft8/lectures/js-event-hand
 https://fellowship.hackbrightacademy.com/materials/serft8/lectures/js-dom-manipulation/
 
 
+### Getting Elements with jQuery
+(from 0921 morning lecture)
+
+    $(selector)
+    Return jQuery object with all elements that match the selector
+    Reference: jQuery API Docs: jQuery()
+
+    * jQuery                    vs          Built-in JavaScript *
+    $('#main-content');                     document.querySelectorAll('#main-content');
+
+    $('p');                                 document.querySelectorAll('p');
+
+    $('p').first();                         document.querySelector('p');
 
 
-### Getting Elements with jQuery ### (0921 morning lecture)
-
-$(selector)
-Return jQuery object with all elements that match the selector
-Reference: jQuery API Docs: jQuery()
-
-* jQuery                    vs          Built-in JavaScript *
-$('#main-content');                     document.querySelectorAll('#main-content');
-
-$('p');                                 document.querySelectorAll('p');
-
-$('p').first();                         document.querySelector('p');
-
-
-## Common Event Types ## (0921 afternoon lecture)
+### Common Event Types
+(from 0921 afternoon lecture)
 
 [:link:MDN Web Docs: Event Reference](https://developer.mozilla.org/en-US/docs/Web/Events)
 
@@ -38,43 +50,43 @@ Input events
 Form events
     submit — when a form is submitted
 
-#### EXCERPT FROM LAB ####
-Features for Ordering Coffee
+### EXCERPT FROM LAB
+    Features for Ordering Coffee
 
-Here are the features!
+    Here are the features!
 
-Add Item to Cart
+    Add Item to Cart
 
-Add an event handler to the Add to cart button that will allow users to add a product to their cart like so.
+    Add an event handler to the Add to cart button that will allow users to add a product to their cart like so.
 
-[GIF]
+    [GIF]
 
-[EVENT-TRIGGER]: When a user clicks on the Add to cart button for an item
-[RESULT]: (1) the item’s name should appear in their cart and
-        (2) the value of the item added to the cart’s total.
+    [EVENT-TRIGGER]: When a user clicks on the Add to cart button for an item
+    [RESULT]: (1) the item’s name should appear in their cart and
+            (2) the value of the item added to the cart’s total.
 
-[EVENT-TYPE] 'click'
+    [EVENT-TYPE] 'click'
 
-[HINT]
+    [HINT]
 
-[NEXT-STEP]: how to select the Add to cart button with jQuery
+    [NEXT-STEP]: how to select the Add to cart button with jQuery
 
-* from index.html:
-    <button class="add-to-order">
-                  Add to cart
-    </button>
+    * from index.html:
+        <button class="add-to-order">
+                      Add to cart
+        </button>
 
-* jQuery                    vs          Built-in JavaScript *
-$('#main-content');                     document.querySelectorAll('#main-content')
+    * jQuery                    vs          Built-in JavaScript *
+    $('#main-content');                     document.querySelectorAll('#main-content')
 
-DESIRED CODE for jQuery: $('.add-to-order')
+    DESIRED CODE for jQuery: $('.add-to-order')
 
-<!-- You can do this one of two ways. Either way, your goal is to write a CSS selector that targets the button. You can dig through the HTML in templates/index.html until you find the button in question or you can use your browser’s dev tools — to do this, right-click on the Add to cart button in your browser and click Inspect Element. Your dev tools should open up and show you the HTML for the element that you clicked on. -->
+    <!-- You can do this one of two ways. Either way, your goal is to write a CSS selector that targets the button. You can dig through the HTML in templates/index.html until you find the button in question or you can use your browser’s dev tools — to do this, right-click on the Add to cart button in your browser and click Inspect Element. Your dev tools should open up and show you the HTML for the element that you clicked on. -->
 
-[NEXT-STEP]: add an event listener onto the button
-            Add this code to static/js/coffeeShop.js.
+    [NEXT-STEP]: add an event listener onto the button
+                Add this code to static/js/coffeeShop.js.
 
-### EXAMPLE FROM AFTERNOON LECTURE *1
+### EXAMPLE 1: FROM AFTERNOON LECTURE
 
     <!-- Remember to use the functions we’ve already defined in the body of your callback function. If you need help getting started, check out the hint below. -->
 
@@ -88,7 +100,7 @@ DESIRED CODE for jQuery: $('.add-to-order')
     // to manipulate the DOM)
     }); -->
 
-### EXAMPLE FROM MORNING LECTURE **2
+### EXAMPLE 2: FROM MORNING LECTURE
 
 
 Remember — you can test your code by going to localhost:5000 in your browser. You may need to hard-reload the page to get your browser to pull in the latest copy of your JavaScript.
@@ -171,20 +183,12 @@ jQuery has a bunch of methods related to traversing the DOM (you can check out t
     });
 
 
-
-
 [SOLUTION]
 
 $('#place-order').on('click', () => {
   incrementCoffeeSold($('#cart-items').children().length);
   resetCart();
 });
-
-
-
-
-
-
 
 
 ### EXAMPLE *1
@@ -234,9 +238,6 @@ button.querySelector('click', (itemName) => {
 }
 
 const button = document.querySelector('#angry-button');
-
-
-
 
 
 
