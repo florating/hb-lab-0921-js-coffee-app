@@ -1,4 +1,4 @@
-#### HACKBRIGHT RESOURCES ####
+# HACKBRIGHT RESOURCES #
 0921 lab instructions:
 https://fellowship.hackbrightacademy.com/materials/serft8/exercises/js-coffee-app/
 
@@ -11,7 +11,7 @@ https://fellowship.hackbrightacademy.com/materials/serft8/lectures/js-dom-manipu
 
 
 
-## Getting Elements with jQuery ## (0921 morning lecture)
+### Getting Elements with jQuery ### (0921 morning lecture)
 
 $(selector)
 Return jQuery object with all elements that match the selector
