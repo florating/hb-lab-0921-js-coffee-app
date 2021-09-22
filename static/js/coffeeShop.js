@@ -109,6 +109,6 @@ $('#place-order').on('click', () => {
         // child <tr> elements
 
 
-//.html - Get the HTML contents of the first element in the set of matched elements.
+//.html() - Get the HTML contents of the first element in the set of matched elements.
 
 //.empty() - Remove all child nodes of the set of matched elements from the DOM.

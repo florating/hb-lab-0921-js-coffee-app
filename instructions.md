@@ -173,6 +173,12 @@ jQuery has a bunch of methods related to traversing the DOM (you can check out t
 
 
 
+[SOLUTION]
+
+$('#place-order').on('click', () => {
+  incrementCoffeeSold($('#cart-items').children().length);
+  resetCart();
+});
 
 
 
