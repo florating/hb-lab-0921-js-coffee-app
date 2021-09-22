@@ -7,3 +7,6 @@ https://fellowship.hackbrightacademy.com/materials/serft8/lectures/js-event-hand
 
 0921 morning lecture (JavaScript and DOM Manipulation):
 https://fellowship.hackbrightacademy.com/materials/serft8/lectures/js-dom-manipulation/
+
+
+
